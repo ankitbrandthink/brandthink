@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 /* ══════════════════════════════════════════════════════════
    SVG ICONS
@@ -109,7 +110,8 @@ const IcoCircleArrow = ({ up }: { up: boolean }) => (
    LEAD FORM — server-side POST to /api/lead → Zoho CRM
    ══════════════════════════════════════════════════════════ */
 function LeadForm({ primary = false }: { primary?: boolean }) {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle');
+  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -130,24 +132,10 @@ function LeadForm({ primary = false }: { primary?: boolean }) {
         }),
       });
       if (!res.ok) throw new Error('Failed');
-      setStatus('sent');
-      form.reset();
+      router.push('/thank-you/');
     } catch {
       setStatus('error');
     }
-  }
-
-  if (status === 'sent') {
-    return (
-      <div className="btl-form" style={{ textAlign: 'center', padding: '2.5rem 1.5rem' }}>
-        <p style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '0.6rem' }}>
-          Thank you! We&apos;ll be in touch shortly.
-        </p>
-        <p style={{ color: '#aaa', fontSize: '0.95rem' }}>
-          Your details are received. Expect a call from our team within 24 hours.
-        </p>
-      </div>
-    );
   }
 
   return (

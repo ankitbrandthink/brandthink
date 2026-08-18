@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type SyntheticEvent } from "react";
+import { useRouter } from "next/navigation";
 import content from "@/content/contactForm.json";
 import HoverFlipText from "@/components/ui/HoverFlipText";
 
@@ -10,6 +11,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const router = useRouter();
 
   async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,22 +33,10 @@ export default function ContactForm() {
       });
 
       if (!res.ok) throw new Error("Failed");
-      setStatus("sent");
-      form.reset();
+      router.push("/thank-you/");
     } catch {
       setStatus("error");
     }
-  }
-
-  if (status === "sent") {
-    return (
-      <div className="border border-grey-1 bg-grey-2 p-8 text-center md:p-10">
-        <p className="bebas text-3xl uppercase text-white">Message Sent.</p>
-        <p className="mt-3 text-light-grey">
-          Thanks for reaching out — we&apos;ll get back to you shortly.
-        </p>
-      </div>
-    );
   }
 
   return (

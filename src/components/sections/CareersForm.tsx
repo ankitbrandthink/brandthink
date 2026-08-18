@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type SyntheticEvent } from "react";
+import { useRouter } from "next/navigation";
 import content from "@/content/careersForm.json";
 import HoverFlipText from "@/components/ui/HoverFlipText";
 
@@ -11,6 +12,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 export default function CareersForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const router = useRouter();
 
   async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,25 +37,10 @@ export default function CareersForm() {
       });
 
       if (!res.ok) throw new Error("Failed");
-      setStatus("sent");
-      form.reset();
+      router.push("/thank-you/");
     } catch {
       setStatus("error");
     }
-  }
-
-  if (status === "sent") {
-    return (
-      <div className="border border-grey-1 bg-grey-2 p-8 text-center md:p-10">
-        <p className="bebas text-3xl uppercase text-white">
-          Application Received.
-        </p>
-        <p className="mt-3 text-light-grey">
-          Thanks for applying — we read every application ourselves and
-          will be in touch if it&apos;s a fit.
-        </p>
-      </div>
-    );
   }
 
   return (

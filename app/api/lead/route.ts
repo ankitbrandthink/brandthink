@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
         data: [{
           Last_Name: name,
           Email: email,
+          Phone: phone,
           Mobile: phone,
           Company: company,
           Description: message ?? '',
