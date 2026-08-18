@@ -1,0 +1,115 @@
+{
+  "eyebrow": "Our Story",
+  "heading": {
+    "line1": "The Growth Didn't Stop.",
+    "highlight": "Neither Did The Proof."
+  },
+  "paragraph": "From a small creative studio to a full-stack MarTech & Creative Technology company. Scroll to explore our journey.",
+  "scrollHint": "SCROLL TO EXPLORE 2015 → 2026",
+  "timeline": [
+    {
+      "year": "2015",
+      "side": "bottom",
+      "color": "#E8000E",
+      "tag": "THE BEGINNING",
+      "title": "Founded",
+      "body": "Turned away project-based work from day one and bet the entire business on retainers built around outcomes, not deliverables. It was the harder sell in year one — and the only model that scaled.",
+      "stats": ["Clients onboarded: 1", "Retainer-only model adopted: Day 1", "External capital raised: ₹0"]
+    },
+    {
+      "year": "2016",
+      "side": "top",
+      "color": "#FF6B35",
+      "tag": "FIRST BIG ACCOUNT",
+      "title": "First Category Leader",
+      "body": "Landed the first recognizable market leader as a client, not through a pitch deck, but through a competitor's referral. That single account became the case study that opened every door after it.",
+      "stats": ["Category-leading brands signed: 1", "Inbound referrals received: 60% of new business", "Avg. deal size vs. prior year: +4x"]
+    },
+    {
+      "year": "2017",
+      "side": "bottom",
+      "color": "#F59E0B",
+      "tag": "PLATFORM TRUST",
+      "title": "Certified Partner Status",
+      "body": "Became an official Premier Partner across major ad platforms, earning direct access to beta tools and priority support most agencies wait years for. Clients got platform-level advantages before their competitors even knew they existed.",
+      "stats": ["Platform certifications earned: 3", "Early-access beta tools unlocked: 12+", "Avg. media efficiency gain: 22%"]
+    },
+    {
+      "year": "2018",
+      "side": "top",
+      "color": "#22C55E",
+      "tag": "RESEARCH AS DISCIPLINE",
+      "title": "Research Practice Launched",
+      "body": "Stopped treating research as a one-off onboarding exercise and built it into a standing practice, continuous consumer and competitor tracking for every active account. Strategy stopped starting from assumptions.",
+      "stats": ["Ongoing research accounts: 8", "Consumer studies run: 40+", "Strategy revisions triggered by research: 65% of accounts"]
+    },
+    {
+      "year": "2019",
+      "side": "bottom",
+      "color": "#06B6D4",
+      "tag": "INDUSTRY RECOGNITION",
+      "title": "First Industry Award",
+      "body": "Won national recognition for a campaign built entirely in-house, validating a systems-first approach the industry had mostly dismissed as \"too clinical\" to be creative. Turns out disciplined and distinctive weren't opposites.",
+      "stats": ["Industry awards won: 1", "Award-shortlisted campaigns: 4", "Media coverage generated: 15+ publications"]
+    },
+    {
+      "year": "2020",
+      "side": "top",
+      "color": "#8B5CF6",
+      "tag": "CRISIS RESPONSE",
+      "title": "ORM Practice Born",
+      "body": "When online conversations turned volatile overnight, reputation management stopped being a side service and became a dedicated practice with its own team and workflows. What started as crisis response became a permanent capability.",
+      "stats": ["Brands onboarded to ORM: 9", "Avg. response time to flagged mentions: <2 hrs", "Sentiment recovery rate: 78%"]
+    },
+    {
+      "year": "2021",
+      "side": "bottom",
+      "color": "#EC4899",
+      "tag": "TALENT PIPELINE",
+      "title": "Talent Academy Launched",
+      "body": "Built a structured internal training program instead of relying on the market to supply ready-made talent — because the systems-first approach only works if every hire thinks that way from day one. Attrition dropped as fast as skill levels rose.",
+      "stats": ["Employees trained internally: 45", "Attrition rate reduction: 31%", "Internal promotions: 60% of leadership hires"]
+    },
+    {
+      "year": "2023",
+      "side": "top",
+      "color": "#14B8A6",
+      "tag": "GOING GLOBAL",
+      "title": "First Global Client",
+      "body": "Signed the first client headquartered outside India, proving the systems-first model traveled beyond the market it was built for. Domestic case studies stopped being the only proof point in the pitch.",
+      "stats": ["International clients onboarded: 1", "Markets served: 2 countries", "Cross-border campaigns delivered: 7"]
+    },
+    {
+      "year": "2024",
+      "side": "bottom",
+      "color": "#3B82F6",
+      "tag": "AI-NATIVE MONITORING",
+      "title": "Sentinel Goes Live",
+      "body": "Launched Sentinel, an AI-native engine that reads sentiment, press coverage, and crisis signals across the internet in real time — turning reputation management from a monthly report into a live, always-on system.",
+      "stats": ["Platforms monitored: 12+", "Press outlets tracked: 180+", "Alert latency: <15 min"]
+    },
+    {
+      "year": "2025",
+      "side": "top",
+      "color": "#A78BFA",
+      "tag": "ONE OPERATING SYSTEM",
+      "title": "Full-Stack Integration",
+      "body": "MarTech, creative, and performance stopped being three connected services and became one operating system — a single dashboard replacing what used to take five separate tools and three separate teams to track. The stack officially became the product.",
+      "stats": ["Client tools consolidated: 5 → 1", "Avg. reporting time saved: 70%"]
+    },
+    {
+      "year": "2026",
+      "side": "bottom",
+      "color": "#E8000E",
+      "tag": "TODAY",
+      "title": "Today",
+      "body": "A decade of contrarian bets, retainers over projects, research as infrastructure, AI as craft rather than shortcut, compounded into a full-stack MarTech and creative technology system running for over a hundred brands worldwide. Not an agency renting tools anymore, a growth partner that builds and owns its own stack.",
+      "stats": ["Brands served: 110+", "Avg. ROAS across active accounts: 6.5x", "Countries served: 3+"]
+    }
+  ],
+  "endCard": {
+    "eyebrow": "WHAT'S NEXT",
+    "heading": "The Next Chapter Starts With You.",
+    "button": "BUILD WITH US →"
+  }
+}

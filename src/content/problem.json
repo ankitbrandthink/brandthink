@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Our Services",
+  "heading": {
+    "line1": "END-TO-END GROWTH.",
+    "highlight": " NO FRICTION."
+  },
+  "items": [
+    {
+      "number": "01",
+      "title": "MARTECH & AI",
+      "image": "/ourservices/Martech_Ai.gif"
+    },
+    {
+      "number": "02",
+      "title": "BRAND SOLUTIONS",
+      "image": "/ourservices/Brand_Solution.gif"
+    },
+    {
+      "number": "03",
+      "title": "MEDIA SOLUTIONS",
+      "image": "/ourservices/Media_Solutions.gif"
+    },
+    {
+      "number": "04",
+      "title": "RESEARCH SOLUTIONS",
+      "image": "/ourservices/Research_Solution.gif"
+    },
+    {
+      "number": "05",
+      "title": "PRODUCTION & VISUALS",
+      "image": "/ourservices/Production_Visual.gif"
+    }
+  ]
+}

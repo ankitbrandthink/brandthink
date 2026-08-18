@@ -1,0 +1,28 @@
+{
+  "logo": "BrandThink",
+  "columnLabels": {
+    "services": "Services",
+    "company": "Company",
+    "connect": "Connect"
+  },
+  "tagline": "Engineering Attention. Converting Demand. Building growth infrastructure for modern brands ready to scale.",
+  "services": [
+    "AI & MarTech",
+    "Strategy & Consulting",
+    "Creative Technology",
+    "Distribution & Growth",
+    "Conversion & Performance"
+  ],
+  "company": [
+    { "label": "About Us", "href": "/about" },
+    { "label": "Our Services", "href": "/services" },
+    { "label": "Case Studies", "href": "/case-studies" },
+    { "label": "Technology", "href": "/technology" },
+    { "label": "Careers", "href": "/careers" }
+  ],
+  "connect": [
+    { "label": "Book a Strategy Call", "href": null },
+    { "label": "Contact Us", "href": "/contact" }
+  ],
+  "copyright": "© 2025 BrandThink. All Rights Reserved."
+}

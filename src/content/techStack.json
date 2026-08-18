@@ -1,0 +1,59 @@
+{
+  "eyebrow": "Technology Stack",
+  "heading": {
+    "line1": "The Engine Behind",
+    "highlight": "Every Growth System."
+  },
+  "description": "Most agencies bolt on a tool when a client asks for it. We build the stack first, then plug in the tools that fit — so every campaign runs on infrastructure, not guesswork.",
+  "categories": [
+    {
+      "icon": "BarChart3",
+      "color": "bg-bt-red",
+      "title": "Analytics & Attribution",
+      "description": "Multi-touch attribution and real-time dashboards so every rupee spent is traceable to a result.",
+      "tools": ["Google Analytics 4", "Mixpanel", "Segment", "Triple Whale"]
+    },
+    {
+      "icon": "Workflow",
+      "color": "bg-orange-500",
+      "title": "Automation & Workflows",
+      "description": "Marketing operations that run themselves — lead routing, nurture sequences, and internal alerts.",
+      "tools": ["Zapier", "Make", "n8n"]
+    },
+    {
+      "icon": "Users",
+      "color": "bg-yellow-500",
+      "title": "CRM & Retention",
+      "description": "Lifecycle marketing and retention flows built to keep customers long after the first sale.",
+      "tools": ["HubSpot", "Klaviyo", "Salesforce"]
+    },
+    {
+      "icon": "Megaphone",
+      "color": "bg-green-500",
+      "title": "Paid Media & Distribution",
+      "description": "Cross-platform buying and creator distribution, wired into the same attribution layer.",
+      "tools": ["Meta Ads Manager", "Google Ads", "TikTok Ads Manager"]
+    },
+    {
+      "icon": "Sparkles",
+      "color": "bg-violet-500",
+      "title": "AI & Content",
+      "description": "AI-assisted ideation, copy, and production that ships faster without losing brand voice.",
+      "tools": ["OpenAI", "Claude", "Midjourney", "Runway"]
+    },
+    {
+      "icon": "Palette",
+      "color": "bg-cyan-500",
+      "title": "Creative & Design Systems",
+      "description": "Design systems and production tooling built for speed, consistency, and scale.",
+      "tools": ["Figma", "Webflow", "Framer", "Adobe Creative Cloud"]
+    }
+  ],
+  "cta": {
+    "heading": {
+      "line1": "Ready To Wire This",
+      "highlight": "Into Your Brand?"
+    },
+    "paragraph": "No pitches. Just a diagnostic of your current growth system and a clear path forward."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "eyebrow": "MarTech + Creative Technology",
+  "heading": {
+    "line1": "We Build Systems That",
+    "highlight": "Turn Attention",
+    "prefix": "Into"
+  },
+  "typewriterWords": ["Revenue", "Pipeline", "Growth", "Profit"],
+  "paragraph": {
+    "before": "BrandThink helps modern brands build ",
+    "bold": "attention, distribution, and conversion systems",
+    "after": " using strategy, AI, content, creators, and performance marketing."
+  },
+  "primaryButton": "Build Your Growth Engine",
+  "secondaryButton": "View Case Studies",
+  "orbit": {
+    "centerLine1": "Growth",
+    "centerLine2": "Engine™",
+    "points": ["Attention", "Distribution", "Conversion", "AI Layer"]
+  }
+}

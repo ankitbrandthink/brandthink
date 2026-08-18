@@ -1,0 +1,45 @@
+{
+  "eyebrow": "Our Methodology",
+  "heading": {
+    "line1": "The BrandThink Growth Loop —",
+    "highlight": "A System That Compounds."
+  },
+  "body": "One-time campaigns don't scale — systems do. The BrandThink Growth Loop runs research, strategy, creative, technology, and performance as one connected engine, so every stage feeds the next instead of starting from zero.",
+  "steps": [
+    {
+      "number": "01",
+      "color": "bg-bt-red",
+      "title": "Research & Insights",
+      "tagline": "Know before you build.",
+      "description": "We map customer behaviour, market gaps, and competitor moves, so strategy starts from evidence, not instinct."
+    },
+    {
+      "number": "02",
+      "color": "bg-orange-500",
+      "title": "Strategy & System Design",
+      "tagline": "Design the roadmap, not the campaign.",
+      "description": "We align brand positioning, customer journeys, and AI-powered workflows into one growth ecosystem built for your specific objectives."
+    },
+    {
+      "number": "03",
+      "color": "bg-yellow-500",
+      "title": "Creative & Distribution",
+      "tagline": "Make it. Move it. Right place, right moment.",
+      "description": "Creative built to convert, distributed across every channel that matters at each stage of the journey."
+    },
+    {
+      "number": "04",
+      "color": "bg-green-500",
+      "title": "Performance & Optimisation",
+      "tagline": "Track what works. Sharpen what doesn't.",
+      "description": "Real-time attribution and continuous testing turn every campaign into a smarter version of the last."
+    },
+    {
+      "number": "05",
+      "color": "bg-violet-500",
+      "title": "Scale & Automation",
+      "tagline": "Turn one win into a growth engine.",
+      "description": "Once a system delivers, we automate the workflow, turning one win into a growth engine that keeps running."
+    }
+  ]
+}

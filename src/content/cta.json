@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Ready to build your growth engine?",
+  "heading": {
+    "line1": "Stop Buying Posts. Start",
+    "highlight": "Building."
+  },
+  "paragraph": "Book a strategy call with our growth team. No pitches. Just a diagnostic of your current growth system and a clear path forward.",
+  "primaryButton": "Book Your Strategy Call →",
+  "secondaryButton": "View All Case Studies",
+  "tertiaryButton": "Download Our Deck",
+  "differentiators": [
+    {
+      "title": "Not a social media agency.",
+      "description": "A serious growth partner."
+    },
+    {
+      "title": "Not deliverables.",
+      "description": "Infrastructure that compounds."
+    },
+    {
+      "title": "Not a vendor.",
+      "description": "An extension of your growth team."
+    },
+    {
+      "title": "Enterprise-ready.",
+      "description": "Built for brands that scale."
+    }
+  ]
+}

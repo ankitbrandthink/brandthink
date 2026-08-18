@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Technology Layer",
+  "heading": {
+    "line1": "Marketing Needs",
+    "highlight": "Infrastructure."
+  },
+  "paragraph": "Most agencies don't show you the engine. We lead with it. Every client gets a custom-built MarTech stack — dashboards, automation, attribution, and AI — all wired together.",
+  "buttonLabel": "See our Tech Stack",
+  "orm": {
+    "eyebrow": "Proprietary Platform",
+    "heading": {
+      "line1": "AI-Powered",
+      "highlight": "Reputation Management Platform"
+    },
+    "brief": "BrandThink's ORM CMS Platform helps businesses monitor, analyze, and manage their online reputation through a unified AI-powered system. The platform combines social listening, sentiment analysis, automated reporting, real-time alerts, and intelligent workflows to help brands respond faster and make data-driven reputation decisions.",
+    "features": [
+      "Multi-channel reputation monitoring",
+      "AI-powered sentiment analysis",
+      "Automated reporting & analytics",
+      "Real-time reputation alerts",
+      "AI-assisted response workflows",
+      "Scalable multi-brand management"
+    ]
+  },
+  "dashboard": {
+    "title": "BRANDTHINK GROWTH DASHBOARD — LIVE",
+    "metrics": [
+      { "label": "TOTAL ROAS", "value": "4.2×", "delta": "↑ 18% vs last month" },
+      { "label": "PIPELINE VALUE", "value": "₹2.4Cr", "delta": "↑ 34% vs last month" },
+      { "label": "CAC REDUCTION", "value": "−42%", "delta": "↑ Target exceeded" }
+    ]
+  }
+}

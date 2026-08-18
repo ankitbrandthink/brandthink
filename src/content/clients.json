@@ -1,0 +1,36 @@
+{
+  "eyebrow": "TRUSTED BY BRANDS BUILDING THE NEXT ERA OF GROWTH",
+  "heading": {
+    "line1": "GROW BEYOND",
+    "highlight1": "CAMPAIGNS.",
+    "line2": "BUILD MARKETING",
+    "highlight2": "SYSTEMS."
+  },
+  "description": "As a leading Digital Marketing Agency in India, BrandThink helps ambitious brands combine MarTech, strategy, creativity, AI, and performance marketing into one scalable growth ecosystem.",
+  "stats": [
+    { "value": "₹10Cr+", "label": "Revenue Influenced" },
+    { "value": "20+", "label": "Brands" },
+    { "value": "50+", "label": "Campaigns Delivered" }
+  ],
+  "logos": [
+    { "name": "BJP", "slug": "bjp", "color": "#FF9933", "logo": "/logos/bjp.png" },
+    { "name": "Fixderma", "slug": "fixderma", "color": "#14B8A6", "logo": "/logos/Fix%20Derma.png" },
+    { "name": "YOHO Footwear", "slug": "yoho-footwear", "color": "#F59E0B", "logo": "/logos/yoho.png" },
+    { "name": "Tally Education", "slug": "tally-education", "color": "#3B82F6", "logo": "/logos/Tally%20Education.png" },
+    { "name": "Adani", "color": "#8B5CF6", "logo": "/logos/Adani.png" },
+    { "name": "Apollo", "color": "#22C55E", "logo": "/logos/Apollo.png" },
+    { "name": "Bajaj", "color": "#06B6D4", "logo": "/logos/Bajaj.png" },
+    { "name": "Flipkart", "color": "#EC4899", "logo": "/logos/Flipkart.png" },
+    { "name": "L'Oréal", "color": "#F59E0B", "logo": "/logos/Loreal.png" },
+    { "name": "Max", "color": "#E8000E", "logo": "/logos/Max.png" },
+    { "name": "Government of India", "color": "#FF9933", "logo": "/logos/Goverment%20of%20india.png" },
+    { "name": "Good Day", "color": "#F59E0B", "logo": "/logos/Good%20Day.png" },
+    { "name": "Sunfeast", "color": "#EC4899", "logo": "/logos/Sunfeast.png" },
+    { "name": "GoodDot", "color": "#22C55E", "logo": "/logos/Good%20Dot.png" },
+    { "name": "AB Mauri", "color": "#3B82F6", "logo": "/logos/AB%20Mauri.png" },
+    { "name": "AYCS", "color": "#A78BFA", "logo": "/logos/aycs.png" },
+    { "name": "IBFW", "color": "#06B6D4", "logo": "/logos/Ibfw.png" },
+    { "name": "Kenaz", "color": "#14B8A6", "logo": "/logos/Kenaz.png" },
+    { "name": "Nior", "color": "#8B5CF6", "logo": "/logos/Nior.png" }
+  ]
+}

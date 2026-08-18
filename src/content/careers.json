@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Careers — Join The System",
+  "heading": {
+    "line1": "We're Not Hiring For Jobs.",
+    "highlight": "We're Hiring For Builders."
+  },
+  "description": "No task lists. No busywork. Just smart people building growth infrastructure for brands that actually want to scale. If you'd rather build systems than push content, you're in the right place.",
+  "hiringProcess": [
+    {
+      "number": "01",
+      "title": "Application Review",
+      "description": "We read every resume ourselves. No bots filtering you out."
+    },
+    {
+      "number": "02",
+      "title": "Intro Call",
+      "description": "A real conversation about you, your work, and what you want to build."
+    },
+    {
+      "number": "03",
+      "title": "Meet The Team",
+      "description": "Show us how you think. We'll see if the fit is real on both sides."
+    }
+  ],
+  "questionsLabel": "Questions Before You Apply?",
+  "questionsEmail": "careers@brandthink.com"
+}

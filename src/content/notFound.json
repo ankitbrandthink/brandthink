@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Error 404 — Signal Lost",
+  "code": "404",
+  "heading": {
+    "line1": "This Page Never",
+    "highlight": "Converted."
+  },
+  "statusWords": [
+    "Bounced.",
+    "Zero Impressions.",
+    "Funnel's Empty.",
+    "Attention: Lost.",
+    "CAC Too High To Retrieve It."
+  ],
+  "paragraph": "Even our best targeting couldn't find this page. Let's get you back to one that actually performs.",
+  "primaryButton": "Back To Homepage",
+  "secondaryButton": "View Case Studies"
+}

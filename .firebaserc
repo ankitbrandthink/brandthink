@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "website-b2984"
+  },
+  "targets": {
+    "website-b2984": {
+      "hosting": {
+        "brandthink": [
+          "brandthink"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

@@ -1,0 +1,98 @@
+{
+  "eyebrow": "Technology",
+  "heading": {
+    "line1": "We Don't Just Monitor Reputation.",
+    "highlight": "We Map The Narrative."
+  },
+  "intro": "Every service we offer is backed by proprietary technology, not rented tools. Meet Sentinel — our AI-native narrative and reputation intelligence engine, live below.",
+  "product": {
+    "eyebrow": "Proprietary Platform",
+    "name": "Sentinel",
+    "tagline": "The Future Of Reputation Intelligence.",
+    "dashboardLabel": "SENTINEL — LIVE",
+    "stats": [
+      { "value": "12+", "label": "Platforms Monitored" },
+      { "value": "24/7", "label": "Coverage" },
+      { "value": "6", "label": "Intelligence Layers" }
+    ]
+  },
+  "pillars": [
+    {
+      "icon": "MessageSquareText",
+      "accent": "#E8000E",
+      "title": "Narrative Intelligence",
+      "headline": "Understand how conversations evolve into narratives with AI-driven analysis.",
+      "metric": { "value": "5+", "label": "Emotions Tracked" },
+      "barPercent": 92,
+      "tags": ["AI", "Narratives", "Insights"]
+    },
+    {
+      "icon": "Newspaper",
+      "accent": "#F59E0B",
+      "title": "Sentiment Analysis",
+      "headline": "Go beyond positive and negative with contextual sentiment intelligence.",
+      "metric": { "value": "180+", "label": "Outlets Monitored" },
+      "barPercent": 88,
+      "tags": ["Emotion", "Context", "AI"]
+    },
+    {
+      "icon": "Radar",
+      "accent": "#3B82F6",
+      "title": "Reputation Monitoring",
+      "headline": "Track conversations across social, web, and press from one platform.",
+      "metric": { "value": "82%", "label": "Organic Signal" },
+      "barPercent": 82,
+      "tags": ["Social", "Web", "Press"]
+    },
+    {
+      "icon": "Target",
+      "accent": "#A78BFA",
+      "title": "Crisis Detection",
+      "headline": "Identify emerging reputation risks before they escalate.",
+      "metric": { "value": "10-Point", "label": "Executive Brief" },
+      "barPercent": 95,
+      "tags": ["Alerts", "Risk", "Response"]
+    },
+    {
+      "icon": "BellRing",
+      "accent": "#22C55E",
+      "title": "Workflow Management",
+      "headline": "Assign, manage, and collaborate through streamlined response workflows.",
+      "metric": { "value": "<15min", "label": "Alert Latency" },
+      "barPercent": 97,
+      "tags": ["Tasks", "Teams", "Approvals"]
+    },
+    {
+      "icon": "FileBarChart",
+      "accent": "#EC4899",
+      "title": "Automated Reporting",
+      "headline": "Transform live intelligence into executive-ready reports in minutes.",
+      "metric": { "value": "PDF / PPT", "label": "Auto-Generated" },
+      "barPercent": 100,
+      "tags": ["Reports", "Analytics", "Dashboard"]
+    }
+  ],
+  "ormProduct": {
+    "eyebrow": "Proprietary Platform",
+    "heading": {
+      "line1": "AI That Understands.",
+      "highlight": "Tech That Responds."
+    },
+    "brief": "This ORM CMS Platform brings together AI, automation, and reputation intelligence to help teams move from simply tracking conversations to understanding, managing, and responding with confidence.",
+    "features": [
+      "Multi-channel reputation monitoring",
+      "AI-powered sentiment & narrative analysis",
+      "Workflow & ticket management",
+      "Automated reporting & executive dashboards",
+      "Real-time alerts & crisis detection",
+      "Secure multi-tenant platform architecture"
+    ]
+  },
+  "cta": {
+    "heading": {
+      "line1": "Don't Just Follow The Narrative.",
+      "highlight": "Shape It."
+    },
+    "paragraph": "Monitor, analyze, and respond with confidence through one unified AI-powered platform built for modern reputation management."
+  }
+}

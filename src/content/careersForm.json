@@ -1,0 +1,14 @@
+{
+  "fields": [
+    { "label": "Full Name", "name": "name", "type": "text", "required": true },
+    { "label": "Email", "name": "email", "type": "email", "required": true },
+    { "label": "Phone", "name": "phone", "type": "tel", "required": false },
+    { "label": "Role You're Applying For", "name": "role", "type": "text", "required": true },
+    { "label": "LinkedIn / Portfolio URL", "name": "portfolio", "type": "url", "required": false }
+  ],
+  "fullWidthFields": ["portfolio"],
+  "resumeLabel": "Resume Link",
+  "resumeHint": "Paste a link to your resume (Google Drive, Dropbox, etc.) — make sure it's accessible to anyone with the link.",
+  "messageLabel": "Anything Else We Should Know?",
+  "submitLabel": "Submit Application →"
+}

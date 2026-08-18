@@ -1,0 +1,84 @@
+{
+  "eyebrow": "Our Capabilities",
+  "heading": {
+    "line1": "Specialized Expertise.",
+    "highlight": "Connected For Growth."
+  },
+  "intro": "Every capability is designed to work together—bringing strategy, creativity, media, research, and technology into one integrated growth ecosystem that helps businesses build stronger brands, acquire customers, and scale with confidence.",
+  "cta": {
+    "heading": {
+      "line1": "Ready To Put These",
+      "highlight": "To Work?"
+    },
+    "paragraph": "No pitches. Just a diagnostic of your current growth system and a clear path forward."
+  },
+  "items": [
+    {
+      "title": "MarTech Solutions",
+      "icon": "Cpu",
+      "accent": "#A78BFA",
+      "image": "/services/MARTECH%20&%20AI.png",
+      "description": "Connecting AI, automation, analytics, and intelligent workflows to build scalable marketing systems that make growth measurable, efficient, and future-ready.",
+      "items": [
+        "Marketing Automation, CRM & ERP",
+        "Building Custom AI Agents & Conversational AI",
+        "Social Listening & Attribution",
+        "AR/VR & AI Marketing Solutions"
+      ]
+    },
+    {
+      "title": "Brand Solutions",
+      "icon": "Palette",
+      "accent": "#E8000E",
+      "image": "/services/BRAND%20SOLUTION.png",
+      "description": "Creating distinctive brands through strategic positioning, compelling storytelling, and digital experiences that build recognition, trust, and long-term business value.",
+      "items": [
+        "Brand Strategy & Positioning",
+        "Website & App Development",
+        "Public Relations & ORM",
+        "Social Media Marketing",
+        "GEO & SEO",
+        "Influencer Marketing"
+      ]
+    },
+    {
+      "title": "Media Solutions",
+      "icon": "Megaphone",
+      "accent": "#F59E0B",
+      "image": "/services/MEDIA%20SOLUTIONS.png",
+      "description": "Accelerating business growth through performance-led media strategies, audience intelligence, and cross-channel distribution that maximize reach and measurable outcomes.",
+      "items": [
+        "Media Planning & Buying",
+        "Performance Marketing",
+        "Marketplace Management (inc. Quick Commerce)",
+        "Print, OOH & Mainline Ads"
+      ]
+    },
+    {
+      "title": "Research Solutions",
+      "icon": "Microscope",
+      "accent": "#14B8A6",
+      "image": "/services/RESEARCH%20SOLUTIONS_f2%20(1).png",
+      "description": "Uncovering customer, market, and competitive insights that empower better decisions, reduce uncertainty, and shape smarter growth strategies.",
+      "items": [
+        "Qualitative & Quantitative Research",
+        "Consumer Insights",
+        "Brand & Market Research",
+        "Competitor Analysis"
+      ]
+    },
+    {
+      "title": "Product Photography & Videography",
+      "icon": "Camera",
+      "accent": "#EC4899",
+      "image": "/services/PRODUCTION%20&%20VISUALS_V2.png",
+      "description": "Producing high-quality visual content that showcases products, tells compelling brand stories, and creates meaningful engagement across every platform.",
+      "items": [
+        "Product Photography & Videography",
+        "Brand Films & Corporate Videos",
+        "Social Media Content Production",
+        "Commercial Campaign Shoots"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "logo": "BrandThink",
+  "email": "adityaraj@thebrandthink.com",
+  "phone": "+91 9571361543",
+  "phoneHref": "tel:+919571361543",
+  "addressDisplay": "Kolkata, India",
+  "addressLocality": "Kolkata",
+  "addressCountry": "IN",
+  "contactDetails": [
+    { "label": "adityaraj@thebrandthink.com", "href": "mailto:adityaraj@thebrandthink.com" },
+    { "label": "+91 9571361543", "href": "tel:+919571361543" },
+    { "label": "Kolkata, India", "href": null }
+  ],
+  "socials": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/company/brand-think90/" },
+    { "label": "Instagram", "href": "https://www.instagram.com/brandthink__/" },
+    { "label": "Facebook", "href": "https://www.facebook.com/brandthink90/" },
+    { "label": "YouTube", "href": "https://www.youtube.com/@BrandThink-go9tu" }
+  ],
+  "nav": [
+    { "label": "Work", "href": "/case-studies" },
+    { "label": "Technology", "href": "/technology" },
+    { "label": "Services", "href": "/services" },
+    { "label": "About", "href": "/about" }
+  ]
+}

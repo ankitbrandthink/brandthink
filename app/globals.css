@@ -1,0 +1,648 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.147 0.004 49.3);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.147 0.004 49.3);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.147 0.004 49.3);
+  --primary: oklch(0.214 0.009 43.1);
+  --primary-foreground: oklch(0.986 0.002 67.8);
+  --secondary: oklch(0.96 0.002 17.2);
+  --secondary-foreground: oklch(0.214 0.009 43.1);
+  --muted: oklch(0.96 0.002 17.2);
+  --muted-foreground: oklch(0.547 0.021 43.1);
+  --accent: oklch(0.96 0.002 17.2);
+  --accent-foreground: oklch(0.214 0.009 43.1);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0.005 34.3);
+  --input: oklch(0.922 0.005 34.3);
+  --ring: oklch(0.714 0.014 41.2);
+  --chart-1: oklch(0.868 0.007 39.5);
+  --chart-2: oklch(0.547 0.021 43.1);
+  --chart-3: oklch(0.438 0.017 39.3);
+  --chart-4: oklch(0.367 0.016 35.7);
+  --chart-5: oklch(0.268 0.011 36.5);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.986 0.002 67.8);
+  --sidebar-foreground: oklch(0.147 0.004 49.3);
+  --sidebar-primary: oklch(0.214 0.009 43.1);
+  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
+  --sidebar-accent: oklch(0.96 0.002 17.2);
+  --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
+  --sidebar-border: oklch(0.922 0.005 34.3);
+  --sidebar-ring: oklch(0.714 0.014 41.2);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.dark {
+  --background: oklch(0.147 0.004 49.3);
+  --foreground: oklch(0.986 0.002 67.8);
+  --card: oklch(0.214 0.009 43.1);
+  --card-foreground: oklch(0.986 0.002 67.8);
+  --popover: oklch(0.214 0.009 43.1);
+  --popover-foreground: oklch(0.986 0.002 67.8);
+  --primary: oklch(0.922 0.005 34.3);
+  --primary-foreground: oklch(0.214 0.009 43.1);
+  --secondary: oklch(0.268 0.011 36.5);
+  --secondary-foreground: oklch(0.986 0.002 67.8);
+  --muted: oklch(0.268 0.011 36.5);
+  --muted-foreground: oklch(0.714 0.014 41.2);
+  --accent: oklch(0.268 0.011 36.5);
+  --accent-foreground: oklch(0.986 0.002 67.8);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.547 0.021 43.1);
+  --chart-1: oklch(0.868 0.007 39.5);
+  --chart-2: oklch(0.547 0.021 43.1);
+  --chart-3: oklch(0.438 0.017 39.3);
+  --chart-4: oklch(0.367 0.016 35.7);
+  --chart-5: oklch(0.268 0.011 36.5);
+  --sidebar: oklch(0.214 0.009 43.1);
+  --sidebar-foreground: oklch(0.986 0.002 67.8);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
+  --sidebar-accent: oklch(0.268 0.011 36.5);
+  --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.547 0.021 43.1);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@theme {
+  --color-dark-grey: #0a0a0a;
+  --color-off-grey: #161616;
+  --color-bt-red: #E8000E;
+  --color-light-grey: #888888;
+  --color-grey-1: #333333;
+  --color-grey-2: #111111;
+  --color-grey-3: #1E1E1E;
+  --color-grey-4: #171717;
+}
+
+@utility hero-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 9vw, 120px);
+  line-height: 0.92;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@utility bebas {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility mono {
+  font-family: var(--font-mono);
+}
+
+@utility btn-brand {
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+
+  padding: 16px 32px;
+
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  height: fit-content;
+
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+
+.btn-brand:hover {
+  transform: translateY(-2px);
+}
+
+.btn-brand-ripple {
+  position: absolute;
+  border-radius: 9999px;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  animation: btn-brand-ripple 600ms ease-out;
+}
+
+/* Per-letter hover reveal: a text-shadow duplicate sits one line below,
+   clipped out of view; hovering slides each letter up to reveal it. */
+.hover-flip-word {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-shadow: 0 1.2em 0 currentColor;
+  clip-path: inset(0 -0.08em);
+}
+
+.hover-flip-char {
+  display: inline-block;
+  white-space: pre;
+  transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: calc(var(--i, 0) * 28ms);
+}
+
+a:hover .hover-flip-char,
+button:hover .hover-flip-char {
+  transform: translateY(-100%);
+}
+
+@keyframes btn-brand-ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8000E;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff2a36;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-spin 40s linear infinite;
+}
+
+.orbit-spin-reverse {
+  animation: orbit-spin 40s linear infinite reverse;
+}
+
+/* Only take over the cursor on devices that actually have a mouse —
+   touch devices keep the native (nonexistent) cursor behavior untouched. */
+@media (hover: hover) and (pointer: fine) {
+
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--color-bt-red);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E8000E;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.custom-cursor-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: opacity 0.15s ease;
+  background: var(--color-bt-red);
+  color: white;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  padding: 8px 18px;
+  border-radius: 9999px;
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: conic-gradient(from var(--border-angle),
+      transparent 0deg,
+      transparent 300deg,
+      #E8000E 335deg,
+      #ff8f85 355deg,
+      #ffffff 360deg);
+  border-image-slice: 1;
+  filter: drop-shadow(0 0 3px #E8000E) drop-shadow(0 0 8px #E8000E);
+  animation: border-angle-spin var(--border-speed, 14s) linear infinite;
+  animation-delay: var(--border-delay, 0s);
+  pointer-events: none;
+}
+
+@keyframes border-angle-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.typewriter-cursor {
+  animation: typewriter-blink 1s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Hover glitch: apply to a simple flat-text element with a matching data-text attribute */
+.glitch-hover {
+  position: relative;
+}
+
+.glitch-hover::before,
+.glitch-hover::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch-hover:hover::before,
+.glitch-hover:hover::after {
+  opacity: 1;
+}
+
+.glitch-hover:hover::before {
+  color: #2dd4ff;
+  mix-blend-mode: screen;
+  animation: glitch-clip 0.6s steps(2, jump-none) infinite;
+}
+
+.glitch-hover:hover::after {
+  color: #e8000e;
+  mix-blend-mode: screen;
+  animation: glitch-clip 0.5s steps(2, jump-none) infinite reverse;
+}
+
+@keyframes glitch-clip {
+  0% {
+    clip-path: inset(0 0 90% 0);
+    transform: translate(-2px, -1px);
+  }
+
+  20% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(2px, 0);
+  }
+
+  40% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(-2px, 1px);
+  }
+
+  60% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(2px, -1px);
+  }
+
+  80% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, 0);
+  }
+
+  100% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translate(2px, 1px);
+  }
+}
+
+/* Ambient glitch: like .glitch-hover but bursts on its own in a loop, no hover needed */
+.glitch-ambient {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-ambient::before,
+.glitch-ambient::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitch-ambient::before {
+  color: #2dd4ff;
+  mix-blend-mode: screen;
+  animation:
+    glitch-clip 2.5s steps(2, jump-none) infinite,
+    glitch-ambient-burst 4s steps(1) infinite;
+}
+
+.glitch-ambient::after {
+  color: #e8000e;
+  mix-blend-mode: screen;
+  animation:
+    glitch-clip 2s steps(2, jump-none) infinite reverse,
+    glitch-ambient-burst 4s steps(1) infinite;
+}
+
+@keyframes glitch-ambient-burst {
+
+  0%,
+  88% {
+    opacity: 0;
+  }
+
+  90%,
+  96% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Scanline overlay for a "signal lost" feel — apply to a `relative`/`absolute` full-bleed container */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 3px);
+  animation: scanline-drift 9s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 240px;
+  }
+}
+
+/* Diagonal light sweep on hover — apply to a `relative overflow-hidden` card */
+.scan-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg,
+      transparent 40%,
+      rgba(232, 0, 14, 0.16) 50%,
+      transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.scan-hover:hover::after {
+  transform: translateX(120%);
+}
+
+/* Underline sweep on hover, for nav links */
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: #e8000e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Infinite horizontal marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Box-wall page transition */
+.box-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #0a0a0a;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.box-wall--closing,
+.box-wall--closed {
+  opacity: 1;
+}
+
+.box-wall--opening {
+  opacity: 0;
+}
+
+.box-wall__spark {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .glitch-hover:hover::before,
+  .glitch-hover:hover::after,
+  .glitch-ambient::before,
+  .glitch-ambient::after,
+  .scanlines,
+  .scan-hover::after,
+  .marquee-track,
+  .glow-border::before,
+  .box-wall,
+  .box-wall__spark,
+  .typewriter-cursor,
+  .hover-flip-char {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-padding-top: 80px;
+  }
+
+  .hero-section {
+    background: url('../src/assets/grid-bg.svg')
+  }
+
+  .hero-glow {
+    background: url('../src/assets/hero-glow.png');
+    top: 0;
+    right: 0;
+    height: 500px;
+    width: 500px;
+  }
+}
