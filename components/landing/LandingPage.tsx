@@ -140,7 +140,7 @@ function Nav() {
   return (
     <nav className="btl-nav">
       <div className="btl-nav-inner">
-        <a href="#" className="btl-logo"><img src="/images/BrandThink_Logo.png" alt="BrandThink" /></a>
+        <a href="https://thebrandthink.com/" className="btl-logo"><img src="/images/BrandThink_Logo.png" alt="BrandThink" /></a>
         <ul className="btl-links">{links.map(l => <li key={l.label}><a href={l.href}>{l.label}</a></li>)}</ul>
         <a href="#form" className="btl-nav-cta">Get a Free Quote now</a>
         <button className="btl-burger" onClick={() => setOpen(o => !o)} aria-label="Menu"><span /><span /><span /></button>

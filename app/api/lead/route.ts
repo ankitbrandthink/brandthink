@@ -54,19 +54,21 @@ export async function POST(req: NextRequest) {
           Company: company,
           Description: location ? `Source Page: ${location}\n\n${message ?? ''}` : (message ?? ''),
           LEADCF1: budget,
-          Lead_Source: 'Performance Marketing Landing Page',
+          Lead_Source: location ? `Performance Marketing - ${location}` : 'Performance Marketing Landing Page',
         }],
       }),
     });
 
-    if (!zohoRes.ok) {
-      const err = await zohoRes.json();
-      console.error('Zoho CRM error:', err);
+    const zohoBody = await zohoRes.json().catch(() => null);
+    if (!zohoRes.ok || zohoBody?.data?.[0]?.status === 'error') {
+      console.error('Zoho CRM error:', JSON.stringify(zohoBody));
+    } else {
+      console.log('Zoho CRM response:', JSON.stringify(zohoBody));
     }
 
     const pageLabel = location ? `Performance Marketing — ${location}` : 'Performance Marketing Landing Page';
 
-    await makeTransport().sendMail({
+    makeTransport().sendMail({
       from: `"BrandThink Website" <${process.env.SMTP_USER}>`,
       to: [process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com', 'ankit.rohilla@thebrandthink.com'],
       replyTo: email,
@@ -81,7 +83,7 @@ export async function POST(req: NextRequest) {
         <p><b>Page:</b> ${pageLabel}</p>
         ${message ? `<hr><p>${message.replace(/\n/g, '<br>')}</p>` : ''}
       `,
-    });
+    }).catch(err => console.error('Email send error:', err));
 
     return NextResponse.json({ success: true });
   } catch (err) {

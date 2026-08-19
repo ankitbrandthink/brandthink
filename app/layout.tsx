@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   authors: [{ name: "BrandThink" }],
   creator: "BrandThink",
   publisher: "BrandThink",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   robots: {
     index: true,
     follow: true,
