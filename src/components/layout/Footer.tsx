@@ -133,7 +133,7 @@ export default function Footer() {
 
       <div className="mx-auto flex flex-col items-center justify-between gap-4 border-t border-grey-1 px-6 py-8 sm:flex-row md:px-12 lg:px-20">
         <p className="text-sm text-light-grey">
-          {copyright}
+          {`© ${new Date().getFullYear()} BrandThink. All Rights Reserved.`}
         </p>
 
         <div className="flex gap-6 text-xs uppercase tracking-[0.2em] text-light-grey">

@@ -13,14 +13,14 @@ import Footer from '@/components/layout/Footer';
 
 /* Routes that render standalone — no main-site Navbar/Footer/border */
 const STANDALONE_PREFIXES = [
-  '/performance-marketing-agency-in-india',
+  '/performance-marketing-agency-in-',
   '/thank-you',
 ];
 
 export default function MainSiteWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const standalone = STANDALONE_PREFIXES.some(
-    (p) => pathname === p || pathname.startsWith(p + '/'),
+    (p) => pathname === p || pathname.startsWith(p),
   );
 
   if (standalone) return <>{children}</>;
