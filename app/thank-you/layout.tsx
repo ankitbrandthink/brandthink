@@ -61,7 +61,7 @@ export default function ThankYouLayout({ children }: { children: React.ReactNode
         })(window,document,"clarity","script","trj305ams6");
       `}</Script>
 
-      <Script strategy="afterInteractive" src="https://crm.zoho.in/crm/javascript/zcga.js" />
+
 
       {/* ── Conversion events — fire only on this thank-you page ── */}
       <Script id="gads-conversion" strategy="afterInteractive">{`

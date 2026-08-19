@@ -99,12 +99,6 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         })(window,document,"clarity","script","trj305ams6");
       `}</Script>
 
-      {/* ── Zoho CRM — GCLID bridge (populates hidden zc_gad field) ── */}
-      <Script
-        strategy="afterInteractive"
-        src="https://crm.zoho.in/crm/javascript/zcga.js"
-      />
-
       {children}
     </div>
   );

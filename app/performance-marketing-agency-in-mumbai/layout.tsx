@@ -69,7 +69,6 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window,document,"clarity","script","trj305ams6");
       `}</Script>
-      <Script strategy="afterInteractive" src="https://crm.zoho.in/crm/javascript/zcga.js" />
       {children}
     </div>
   );
