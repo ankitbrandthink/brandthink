@@ -21,14 +21,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    await makeTransport().sendMail({
+    makeTransport().sendMail({
       from: `"BrandThink Website" <${process.env.SMTP_USER}>`,
       to: [process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com', 'ankit.rohilla@thebrandthink.com'],
       replyTo: email,
       subject: `Contact: ${name}${company ? ` — ${company}` : ''}`,
       text: `Name: ${name}\nEmail: ${email}\nCompany: ${company ?? 'N/A'}\n\n${message}`,
       html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Company:</b> ${company ?? 'N/A'}</p><hr><p>${message.replace(/\n/g, '<br>')}</p>`,
-    });
+    }).catch(err => console.error('Contact email error:', err));
 
     return NextResponse.json({ success: true });
   } catch (err) {

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    await makeTransport().sendMail({
+    makeTransport().sendMail({
       from: `"BrandThink Website" <${process.env.SMTP_USER}>`,
       to: [process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com', 'ankit.rohilla@thebrandthink.com'],
       replyTo: email,
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
         <p><b>Resume:</b> <a href="${resume}">${resume}</a></p>
         ${message ? `<hr><p>${message.replace(/\n/g, '<br>')}</p>` : ''}
       `,
-    });
+    }).catch(err => console.error('Careers email error:', err));
 
     return NextResponse.json({ success: true });
   } catch (err) {
