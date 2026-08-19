@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
           Company: company,
           Description: message ?? '',
           LEADCF1: budget,
-          Lead_Source: 'Performance Marketing Landing Page',
+          Lead_Source: location ? `Performance Marketing Landing Page - ${location}` : 'Performance Marketing Landing Page',
         }],
       }),
     });
