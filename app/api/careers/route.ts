@@ -23,8 +23,7 @@ export async function POST(req: NextRequest) {
 
     await makeTransport().sendMail({
       from: `"BrandThink Website" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com',
-      cc: 'ankit.rohilla@thebrandthink.com',
+      to: [process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com', 'ankit.rohilla@thebrandthink.com'],
       replyTo: email,
       subject: `Application: ${name} — ${role}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone ?? 'N/A'}\nRole: ${role}\nPortfolio: ${portfolio ?? 'N/A'}\nResume: ${resume}\n\n${message ?? ''}`,

@@ -52,9 +52,9 @@ export async function POST(req: NextRequest) {
           Phone: phone,
           Mobile: phone,
           Company: company,
-          Description: message ?? '',
+          Description: location ? `Source Page: ${location}\n\n${message ?? ''}` : (message ?? ''),
           LEADCF1: budget,
-          Lead_Source: location ? `Performance Marketing Landing Page - ${location}` : 'Performance Marketing Landing Page',
+          Lead_Source: 'Performance Marketing Landing Page',
         }],
       }),
     });
@@ -68,8 +68,7 @@ export async function POST(req: NextRequest) {
 
     await makeTransport().sendMail({
       from: `"BrandThink Website" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com',
-      cc: 'ankit.rohilla@thebrandthink.com',
+      to: [process.env.SMTP_TO ?? 'adityaraj@thebrandthink.com', 'ankit.rohilla@thebrandthink.com'],
       replyTo: email,
       subject: `New Lead: ${name} — ${pageLabel}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nBudget: ${budget}\nPage: ${pageLabel}\n\n${message ?? ''}`,
