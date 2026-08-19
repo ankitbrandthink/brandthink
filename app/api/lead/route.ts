@@ -54,6 +54,7 @@ export async function POST(req: NextRequest) {
           Company: company,
           Description: location ? `Source Page: ${location}\n\n${message ?? ''}` : (message ?? ''),
           LEADCF1: budget,
+          Monthly_Budget: budget,
           Lead_Source: location ? `Performance Marketing - ${location}` : 'Performance Marketing Landing Page',
         }],
       }),
