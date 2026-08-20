@@ -165,7 +165,7 @@ export const puneConfig: LandingConfig = {
   },
   whySub: 'Built as a digital performance marketing agency delivering measurable, scalable growth.',
   aeoDesc: "We're an AEO and GEO-ready performance marketing agency in Pune built for how people search now.",
-  budgetOptions: ['Below Rs. 2,50,000', 'Rs. 2,50,000 - Rs. 5,00,000', 'Rs. 7,50,000 - Rs. 15,00,000', 'Above Rs. 15,00,000'],
+  budgetOptions: ['Below Rs. 1,00,000', 'Rs. 1,00,000 - Rs. 5,00,000', 'Rs. 5,00,000 - Rs. 10,00,000', 'Above Rs. 10,00,000'],
   faqs: [
     { q: 'What does a performance marketing agency in Pune do?', a: ["A performance marketing agency in Pune manages your entire growth funnel — from the first ad impression to the final conversion.", "Google Ads and Meta Ads planned and run as one connected strategy", "Landing page and funnel audits to fix where you're losing potential customers", "Weekly reporting tied directly to leads, sales, and revenue — not vanity metrics like reach or impressions"] },
     { q: 'How much does performance marketing cost in Pune?', a: ["It depends on your industry, how competitive your keywords are, and what you're putting into ad spend.", "Most businesses start from ₹25,000 - ₹1,00,000/month as an agency retainer, separate from your ad budget", "Your ad spend is on top of that. The retainer covers strategy, execution, and optimisation", "Businesses with tighter budgets can still see results; it just means tighter targeting and slower scaling"] },
