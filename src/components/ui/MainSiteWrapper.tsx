@@ -14,6 +14,7 @@ import Footer from '@/components/layout/Footer';
 /* Routes that render standalone — no main-site Navbar/Footer/border */
 const STANDALONE_PREFIXES = [
   '/performance-marketing-agency-in-',
+  '/performace-marketing-agency-in-',
   '/thank-you',
 ];
 
