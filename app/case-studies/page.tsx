@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
             <span className="block text-bt-red">Not Outputs.</span>
           </h1>
 
-          <p className="max-w-2xl text-lg text-light-grey">
+          <p className="max-w-2xl text-base text-light-grey sm:text-lg">
             Every engagement starts with a broken system, not a
             content gap. Here's what happens when we fix the system
             instead.
@@ -88,7 +88,7 @@ export default function CaseStudiesPage() {
                       {study.stats.map((stat) => (
                         <div key={stat.label}>
                           <div
-                            className="bebas text-2xl"
+                            className="bebas text-xl sm:text-2xl"
                             style={{ color: study.color }}
                           >
                             <AnimatedCounter value={stat.value} />

@@ -55,7 +55,7 @@ export default function ShowReel() {
           </h2>
         </Reveal>
 
-        <p className="mb-12 max-w-2xl text-lg text-light-grey">
+        <p className="mb-12 max-w-2xl text-base text-light-grey sm:text-lg">
           {content.description}
         </p>
 

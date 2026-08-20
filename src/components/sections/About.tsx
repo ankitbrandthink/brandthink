@@ -27,6 +27,17 @@ export default function AboutTimeline() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { open: openBookCallModal } = useBookCallModal();
   const [maxTranslate, setMaxTranslate] = useState(FALLBACK_MAX_TRANSLATE);
+  // Mobile drops the alternating top/bottom zigzag — every item renders
+  // year-above/box-below instead, so it stays legible on small screens.
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     function measure() {
@@ -82,150 +93,150 @@ export default function AboutTimeline() {
       style={{ height: `calc(100vh + ${INTRO_PX}px + ${maxTranslate}px)` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-      {/* Title — the timeline slides up over this and it fades out */}
-      <motion.div
-        animate={{ opacity: titleHidden ? 0 : 1 }}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="pointer-events-none absolute inset-x-0 top-0 z-30 px-6 pt-32 md:px-12 lg:px-20"
-      >
-        <Reveal className="max-w-4xl">
-          <p
-            data-text={content.eyebrow}
-            className="glitch-hover mb-4 text-sm uppercase tracking-[0.3em] text-bt-red"
-          >
-            {content.eyebrow}
-          </p>
-
-          <h2 className="bebas mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase text-white">
-            {content.heading.line1}
-            <span className="block text-bt-red">
-              {content.heading.highlight}
-            </span>
-          </h2>
-        </Reveal>
-      </motion.div>
-
-      {/* Timeline */}
-      <motion.div
-        ref={trackRef}
-        style={{ x, y }}
-        className="relative z-20 flex h-full items-center"
-      >
-        <div className="relative flex h-[750px] shrink-0 px-20">
-          {/* Main line */}
-          <div className="absolute left-20 right-20 top-1/2 h-px bg-grey-1" />
-
-          {timeline.map((item) => (
-            <div
-              key={item.year}
-              className="relative w-[520px] flex-shrink-0"
+        {/* Title — the timeline slides up over this and it fades out */}
+        <motion.div
+          animate={{ display: titleHidden ? 'none' : 'block' }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+          className="pointer-events-none absolute inset-x-0 top-0 z-30 px-6 pt-32 md:px-12 lg:px-20"
+        >
+          <Reveal className="max-w-4xl">
+            <p
+              data-text={content.eyebrow}
+              className="glitch-hover mb-4 text-sm uppercase tracking-[0.3em] text-bt-red"
             >
-              {item.side === "top" ? (
-                <>
-                  {/* Box sits above the main line */}
-                  <div className="absolute bottom-1/2 left-1/2 z-20 mb-8 -translate-x-1/2">
-                    <TimelineCard item={item} />
-                  </div>
+              {content.eyebrow}
+            </p>
 
-                  {/* Circle, line, year sit on the other side of the main line */}
-                  <div className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
-                    <div
-                      className="mt-4 h-4 w-4 rounded-full border-2"
-                      style={{
-                        borderColor: item.color,
-                      }}
-                    >
-                      <div
-                        className="m-auto mt-[2px] h-2 w-2 rounded-full"
-                        style={{
-                          background: item.color,
-                        }}
-                      />
-                    </div>
+            <h2 className="bebas mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase text-white">
+              {content.heading.line1}
+              <span className="block text-bt-red">
+                {content.heading.highlight}
+              </span>
+            </h2>
+          </Reveal>
+        </motion.div>
 
-                    <div
-                      className="h-16 w-px"
-                      style={{
-                        background: item.color,
-                      }}
-                    />
+        {/* Timeline */}
+        <motion.div
+          ref={trackRef}
+          style={{ x, y }}
+          className="relative z-20 flex h-full pt-20 items-center"
+        >
+          <div className="relative flex h-[750px] shrink-0 px-20 md:pt-0">
+            {/* Main line */}
+            <div className="absolute left-20 right-20 top-1/2 h-px bg-grey-1" />
 
-                    <div
-                      className="mb-2 bebas text-4xl font"
-                      style={{
-                        color: item.color,
-                      }}
-                    >
-                      {item.year}
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* Circle, line, year sit above the main line */}
-                  <div className="absolute bottom-1/2 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
-                    <div
-                      className="mb-2 bebas text-4xl font"
-                      style={{
-                        color: item.color,
-                      }}
-                    >
-                      {item.year}
-                    </div>
-
-                    <div
-                      className="h-16 w-px"
-                      style={{
-                        background: item.color,
-                      }}
-                    />
-
-                    <div
-                      className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border-2"
-                      style={{
-                        borderColor: item.color,
-                      }}
-                    >
-                      <div
-                        className="h-2 w-2 rounded-full"
-                        style={{
-                          background: item.color,
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Box sits on the other side of the main line, below it */}
-                  <div className="absolute left-1/2 top-1/2 z-20 mt-8 -translate-x-1/2">
-                    <TimelineCard item={item} />
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-
-          {/* End Card */}
-          <div className="relative ml-10 flex w-[320px] items-center">
-            <div className="border border-bt-red bg-[#1A0000] p-8">
-              <p className="mb-4 text-[10px] tracking-[0.2em] text-bt-red">
-                {endCard.eyebrow}
-              </p>
-
-              <h3 className="bebas mb-6 text-4xl text-white">
-                {endCard.heading}
-              </h3>
-
-              <button
-                type="button"
-                onClick={openBookCallModal}
-                className="btn-brand w-full bg-bt-red text-white"
+            {timeline.map((item) => (
+              <div
+                key={item.year}
+                className="relative w-[640px] flex-shrink-0"
               >
-                <HoverFlipText text={endCard.button} />
-              </button>
+                {(isMobile ? "bottom" : item.side) === "top" ? (
+                  <>
+                    {/* Box sits above the main line */}
+                    <div className="absolute bottom-1/2 left-1/2 z-20 mb-4 -translate-x-1/2">
+                      <TimelineCard item={item} />
+                    </div>
+
+                    {/* Circle, line, year sit on the other side of the main line */}
+                    <div className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
+                      <div
+                        className="mt-4 h-4 w-4 rounded-full border-2"
+                        style={{
+                          borderColor: item.color,
+                        }}
+                      >
+                        <div
+                          className="m-auto mt-[2px] h-2 w-2 rounded-full"
+                          style={{
+                            background: item.color,
+                          }}
+                        />
+                      </div>
+
+                      <div
+                        className="h-16 w-px"
+                        style={{
+                          background: item.color,
+                        }}
+                      />
+
+                      <div
+                        className="mb-2 bebas text-2xl font sm:text-3xl md:text-4xl"
+                        style={{
+                          color: item.color,
+                        }}
+                      >
+                        {item.year}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Circle, line, year sit above the main line */}
+                    <div className="absolute bottom-[70%] md:bottom-1/2 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center">
+                      <div
+                        className="mb-2 bebas text-2xl font sm:text-3xl md:text-4xl"
+                        style={{
+                          color: item.color,
+                        }}
+                      >
+                        {item.year}
+                      </div>
+
+                      <div
+                        className="h-16 w-px"
+                        style={{
+                          background: item.color,
+                        }}
+                      />
+
+                      <div
+                        className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border-2"
+                        style={{
+                          borderColor: item.color,
+                        }}
+                      >
+                        <div
+                          className="h-2 w-2 rounded-full"
+                          style={{
+                            background: item.color,
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Box sits on the other side of the main line, below it */}
+                    <div className="absolute left-1/2 bottom-[20%] md:top-1/2 z-20 mt-4 -translate-x-1/2">
+                      <TimelineCard item={item} />
+                    </div>
+                  </>
+                )}
+              </div>
+            ))}
+
+            {/* End Card */}
+            <div className="relative ml-10 flex w-[320px] items-center">
+              <div className="border border-bt-red bg-[#1A0000] p-6">
+                <p className="mb-3 text-[10px] tracking-[0.2em] text-bt-red">
+                  {endCard.eyebrow}
+                </p>
+
+                <h3 className="bebas mb-4 text-2xl text-white sm:text-3xl md:text-4xl">
+                  {endCard.heading}
+                </h3>
+
+                <button
+                  type="button"
+                  onClick={openBookCallModal}
+                  className="btn-brand w-full bg-bt-red text-white"
+                >
+                  <HoverFlipText text={endCard.button} />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
       </div>
     </section>
   );
@@ -238,7 +249,7 @@ function TimelineCard({
 }) {
   return (
     <div
-      className="mx-3 flex h-[320px] w-[440px] flex-col border border-grey-1 bg-grey-2"
+      className="mx-3 flex w-[90vw] md:w-[400px] h-[370px] md:h-[360px] flex-col border border-grey-1 bg-grey-2"
       style={{
         borderColor:
           item.year === "2026"
@@ -257,9 +268,9 @@ function TimelineCard({
         }}
       />
 
-      <div className="flex flex-1 flex-col overflow-hidden p-6">
+      <div className="flex flex-1 flex-col overflow-hidden p-4 md:p-5">
         <p
-          className="mb-3 shrink-0 text-[10px] tracking-[0.2em]"
+          className="mb-2 shrink-0 text-[10px] tracking-[0.2em]"
           style={{
             color: item.color,
           }}
@@ -267,20 +278,20 @@ function TimelineCard({
           {item.tag}
         </p>
 
-        <h3 className="bebas mb-4 shrink-0 text-4xl text-white">
+        <h3 className="bebas mb-2 shrink-0 text-2xl text-white sm:text-3xl md:text-4xl">
           {item.title}
         </h3>
 
-        <p className="mb-5 line-clamp-4 text-sm leading-relaxed text-light-grey">
+        <p className="mb-3 text-xs leading-relaxed text-light-grey sm:text-sm">
           {item.body}
         </p>
 
         {item.stats.length > 0 && (
-          <div className="mt-auto space-y-2">
+          <div className="mt-3 space-y-1 md:mt-auto">
             {item.stats.map((stat: string) => (
               <div
                 key={stat}
-                className="flex items-center gap-2 bg-black/20 px-3 py-2"
+                className="flex items-center gap-2 bg-black/20 px-2.5 py-1"
               >
                 <span
                   className="h-1 w-1 shrink-0 rounded-full"
@@ -289,7 +300,7 @@ function TimelineCard({
                   }}
                 />
 
-                <span className="mono text-xs tracking-wide text-light-grey">
+                <span className="mono text-[10px] tracking-wide text-light-grey sm:text-xs">
                   {stat}
                 </span>
               </div>

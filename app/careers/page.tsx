@@ -33,7 +33,7 @@ export default function Careers() {
           </span>
         </h1>
 
-        <p className="mb-16 max-w-2xl text-lg text-light-grey">
+        <p className="mb-16 max-w-2xl text-base text-light-grey sm:text-lg">
           {content.description}
         </p>
 
@@ -51,7 +51,7 @@ export default function Careers() {
               <div className="space-y-6">
                 {content.hiringProcess.map((step) => (
                   <div key={step.number} className="flex gap-4">
-                    <div className="bebas shrink-0 text-3xl text-bt-red opacity-40">
+                    <div className="bebas shrink-0 text-2xl text-bt-red opacity-40 sm:text-3xl">
                       {step.number}
                     </div>
 

@@ -117,7 +117,7 @@ export default function CaseStudies() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="max-w-2xl text-lg text-light-grey">
+              <p className="max-w-2xl text-base text-light-grey sm:text-lg">
                 {content.body}
               </p>
             </Reveal>
@@ -140,7 +140,7 @@ export default function CaseStudies() {
         className="relative bg-off-grey"
         style={{ height: `${featuredCaseStudies.length * VH_PER_CARD}vh` }}
       >
-        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden py-8">
+        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden pb-8 pt-24">
           <div className="absolute right-6 top-1/2 z-30 flex -translate-y-1/2 flex-col gap-3 md:right-12">
             <button
               type="button"
@@ -187,7 +187,7 @@ export default function CaseStudies() {
                       compact
                     />
 
-                    <div className="p-6 md:p-8">
+                    <div className="p-5 md:p-6">
                       <p
                         className="mb-2 text-xs uppercase tracking-[0.2em]"
                         style={{ color: study.color }}
@@ -196,19 +196,19 @@ export default function CaseStudies() {
                       </p>
 
                       <h3
-                        className="bebas mb-6 text-3xl uppercase"
+                        className="bebas mb-3 text-2xl uppercase sm:text-3xl"
                         style={{ color: study.color }}
                       >
                         {study.title}
                       </h3>
 
-                      <div className="mb-4 border-t border-grey-1" />
+                      <div className="mb-3 border-t border-grey-1" />
 
-                      <div className="flex flex-wrap gap-6 md:gap-8">
+                      <div className="flex flex-wrap gap-4 md:gap-6">
                         {study.stats.map((stat) => (
                           <div key={stat.label}>
                             <div
-                              className="bebas text-3xl"
+                              className="bebas text-2xl sm:text-3xl"
                               style={{ color: study.color }}
                             >
                               <AnimatedCounter value={stat.value} />

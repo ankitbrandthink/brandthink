@@ -46,7 +46,10 @@ export default function Problem() {
     const cards = cardRefs.current.filter((c): c is HTMLDivElement => !!c);
     if (!section || cards.length === 0) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !window.matchMedia("(min-width: 1024px)").matches
+    ) {
       gsap.set(cards, { clearProps: "all" });
       gsap.set(panelRefs.current.filter(Boolean), { clearProps: "all" });
       return;
@@ -185,7 +188,7 @@ export default function Problem() {
                 />
 
                 <div className="relative z-10 flex h-full flex-col justify-end p-6">
-                  <div className="bebas mb-2 text-5xl text-white/70">
+                  <div className="bebas mb-2 text-4xl text-white/70 sm:text-5xl">
                     {item.number}
                   </div>
 

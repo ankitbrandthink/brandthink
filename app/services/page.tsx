@@ -41,7 +41,7 @@ export default function ServicesPage() {
               </span>
             </h1>
 
-            <p className="max-w-2xl text-lg text-light-grey">
+            <p className="max-w-2xl text-base text-light-grey sm:text-lg">
               {content.intro}
             </p>
           </div>
