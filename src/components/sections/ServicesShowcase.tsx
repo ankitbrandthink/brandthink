@@ -27,6 +27,7 @@ const ICONS: Record<string, LucideIcon> = {
 export default function ServicesShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const flipperRef = useRef<HTMLDivElement>(null);
   const faceARef = useRef<HTMLImageElement>(null);
@@ -58,7 +59,42 @@ export default function ServicesShowcase() {
     faceA.src = content.items[0].image;
     faceB.src = content.items[1]?.image ?? content.items[0].image;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !isDesktop) {
+      // Mobile: the image column is a sticky split-screen panel above the
+      // scrollable text list rather than a page-scroll-driven flip, so swap
+      // the static face to match whichever row is most visible in that list
+      // instead of running the GSAP flip.
+      const root = scrollContainerRef.current;
+      if (!isDesktop && root) {
+        const ratios = new Map<Element, number>();
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => ratios.set(entry.target, entry.intersectionRatio));
+
+            let bestRow: Element | null = null;
+            let bestRatio = 0;
+            ratios.forEach((ratio, el) => {
+              if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestRow = el;
+              }
+            });
+
+            if (!bestRow) return;
+            const index = rowRefs.current.indexOf(bestRow as HTMLDivElement);
+            if (index === -1) return;
+            faceA.src = content.items[index].image;
+          },
+          { root, threshold: [0, 0.25, 0.5, 0.75, 1] }
+        );
+
+        rowRefs.current.forEach((row) => row && observer.observe(row));
+        return () => observer.disconnect();
+      }
+
       return;
     }
 
@@ -94,10 +130,10 @@ export default function ServicesShowcase() {
       ref={sectionRef}
       className="mx-auto mt-16 grid w-full gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20"
     >
-      <div className="lg:sticky lg:top-35 lg:h-fit">
+      <div className="sticky top-20 z-10 h-[40vh] lg:top-35 lg:z-auto lg:h-fit">
         <div
           ref={imageWrapperRef}
-          className="relative aspect-[4/3] w-full"
+          className="relative h-full w-full lg:aspect-[4/3] lg:h-auto"
           style={{ perspective: "1600px" }}
         >
           <div
@@ -123,7 +159,10 @@ export default function ServicesShowcase() {
         </div>
       </div>
 
-      <div>
+      <div
+        ref={scrollContainerRef}
+        className="max-h-[calc(100vh-5rem-40vh-3rem)] overflow-y-auto overscroll-contain lg:max-h-none lg:overflow-visible"
+      >
         {content.items.map((item, index) => {
           const Icon = ICONS[item.icon] ?? Palette;
 

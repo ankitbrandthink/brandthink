@@ -66,7 +66,7 @@ export default function Technology() {
                     {metric.label}
                   </p>
 
-                  <h3 className="bebas text-5xl text-white">
+                  <h3 className="bebas text-4xl text-white sm:text-5xl">
                     <AnimatedCounter value={metric.value} />
                   </h3>
 
@@ -93,7 +93,7 @@ export default function Technology() {
             </span>
           </h2>
 
-          <p className="mx-auto mb-12 max-w-2xl text-lg text-light-grey">
+          <p className="mx-auto mb-12 max-w-2xl text-base text-light-grey sm:text-lg">
             {content.orm.brief}
           </p>
         </Reveal>

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useBookCallModal } from "@/components/ui/BookCallModal";
 import HoverFlipText from "@/components/ui/HoverFlipText";
@@ -35,6 +36,17 @@ function handleNavLinkClick(
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { open: openBookCallModal } = useBookCallModal();
+  const pathname = usePathname();
+
+  // The site's page-transition wall intercepts internal link clicks (to run
+  // its own animated navigation) before our Link's onClick ever fires, so
+  // closing the menu on click can't be relied on for real page changes.
+  // Closing on pathname change instead works regardless of how the
+  // navigation actually happened, and the wall is already fully opaque by
+  // the time the URL updates, so there's no visible flash of an open menu.
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full border-b border-grey-1 bg-dark-grey/90 backdrop-blur">

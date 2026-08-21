@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 type Member = {
@@ -23,7 +23,8 @@ const FACE_PALETTE = [
 ];
 
 const VH_PER_MEMBER = 70;
-const FACE_SIZE = 500;
+const MAX_FACE_SIZE = 500;
+const MIN_FACE_SIZE = 220;
 
 // The 6 physical faces of the cube. Each is defined purely by its own
 // placement transform, using a single axis (front/right/back/left rotate
@@ -39,10 +40,26 @@ const FACE_DEFS = [
   { id: 5, baseX: -90, baseY: 0 }, // bottom
 ] as const;
 
-const FACE_SLOTS = FACE_DEFS.map((face) => ({
-  slotIndex: face.id,
-  transform: `rotateY(${face.baseY}deg) rotateX(${face.baseX}deg) translateZ(${FACE_SIZE / 2}px)`,
-}));
+function buildFaceSlots(faceSize: number) {
+  return FACE_DEFS.map((face) => ({
+    slotIndex: face.id,
+    transform: `rotateY(${face.baseY}deg) rotateX(${face.baseX}deg) translateZ(${faceSize / 2}px)`,
+  }));
+}
+
+// Shrinks the cube to fit small viewports; 48px matches the section's
+// tightest horizontal padding (px-6) and 160px leaves room for the sticky
+// header plus breathing space above/below the cube.
+function computeFaceSize() {
+  if (typeof window === "undefined") return MAX_FACE_SIZE;
+  const available = Math.min(
+    window.innerWidth - 48,
+    window.innerHeight - 160
+  );
+  return Math.round(
+    Math.max(MIN_FACE_SIZE, Math.min(MAX_FACE_SIZE, available))
+  );
+}
 
 // The order the cube visits its 6 faces, alternating side (Y-axis) and
 // top/bottom (X-axis) turns so it genuinely tumbles in multiple directions
@@ -137,7 +154,7 @@ function FacePanel({ member, color }: { member: Member; color: string }) {
           className="absolute inset-0 flex items-center justify-center"
           style={{ background: color }}
         >
-          <span className="bebas text-6xl text-white/90">
+          <span className="bebas text-4xl text-white/90 sm:text-5xl md:text-6xl">
             {initials(member.name)}
           </span>
         </div>
@@ -160,6 +177,18 @@ function FacePanel({ member, color }: { member: Member; color: string }) {
 export default function TeamDice({ members }: { members: Member[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [faceSize, setFaceSize] = useState(MAX_FACE_SIZE);
+
+  useEffect(() => {
+    function measure() {
+      setFaceSize(computeFaceSize());
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  const faceSlots = useMemo(() => buildFaceSlots(faceSize), [faceSize]);
 
   const totalSteps = members.length - 1;
 
@@ -224,14 +253,14 @@ export default function TeamDice({ members }: { members: Member[] }) {
             <motion.div
               className="relative"
               style={{
-                width: FACE_SIZE,
-                height: FACE_SIZE,
+                width: faceSize,
+                height: faceSize,
                 transformStyle: "preserve-3d",
                 rotateX,
                 rotateY,
               }}
             >
-              {FACE_SLOTS.map((slot) => {
+              {faceSlots.map((slot) => {
                 const memberIndex = memberIndexForSlot(
                   slot.slotIndex,
                   activeIndex,

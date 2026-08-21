@@ -135,7 +135,7 @@ export default async function CaseStudyDetailPage({
               The Challenge
             </p>
 
-            <p className="text-lg leading-relaxed text-white">
+            <p className="text-base leading-relaxed text-white sm:text-lg">
               {study.challenge}
             </p>
           </Reveal>
@@ -145,7 +145,7 @@ export default async function CaseStudyDetailPage({
               Our Approach
             </p>
 
-            <p className="text-lg leading-relaxed text-white">
+            <p className="text-base leading-relaxed text-white sm:text-lg">
               {study.solution}
             </p>
           </Reveal>
@@ -155,7 +155,7 @@ export default async function CaseStudyDetailPage({
               The Result
             </p>
 
-            <p className="text-lg leading-relaxed text-white">
+            <p className="text-base leading-relaxed text-white sm:text-lg">
               {study.result}
             </p>
           </Reveal>
@@ -203,7 +203,7 @@ export default async function CaseStudyDetailPage({
                     {other.industry}
                   </p>
 
-                  <h3 className="bebas text-xl uppercase text-white">
+                  <h3 className="bebas text-lg uppercase text-white sm:text-xl">
                     {other.title}
                   </h3>
                 </Link>

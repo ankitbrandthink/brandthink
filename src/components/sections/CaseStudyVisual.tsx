@@ -48,12 +48,14 @@ export default function CaseStudyVisual({
 
   if (image) {
     return (
-      <div className="relative shrink-0 overflow-hidden border-b border-grey-1 bg-dark-grey">
+      <div
+        className={`relative shrink-0 overflow-hidden border-b border-grey-1 bg-dark-grey ${compact ? "aspect-[2.4/1]" : ""}`}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image}
           alt={alt ?? ""}
-          className="block h-auto w-full"
+          className={compact ? "absolute inset-0 h-full w-full object-cover" : "block h-auto w-full"}
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-dark-grey/80 via-transparent to-transparent" />
@@ -67,7 +69,7 @@ export default function CaseStudyVisual({
 
         {clientName && (
           <span
-            className={`bebas absolute bottom-5 left-6 uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.45)] ${compact ? "text-3xl" : "text-4xl"}`}
+            className={`bebas absolute bottom-5 left-6 uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.45)] ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}
           >
             {clientName}
           </span>
@@ -97,7 +99,7 @@ export default function CaseStudyVisual({
 
       {clientName && (
         <span
-          className={`bebas absolute bottom-5 left-6 uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.45)] ${compact ? "text-3xl" : "text-4xl"}`}
+          className={`bebas absolute bottom-5 left-6 uppercase tracking-wide text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.45)] ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}
         >
           {clientName}
         </span>

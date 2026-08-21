@@ -102,7 +102,7 @@ export default function Methodology() {
         </Reveal>
 
         <Reveal delay={0.1} className="mx-auto text-center">
-          <p className="mx-auto mb-24 max-w-2xl text-lg text-light-grey">
+          <p className="mx-auto mb-24 max-w-2xl text-base text-light-grey sm:text-lg">
             {content.body}
           </p>
         </Reveal>

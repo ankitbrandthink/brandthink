@@ -146,7 +146,7 @@ export default function Clients() {
           </h2>
         </div>
         <div className="flex w-full items-center justify-center mx-auto px-4 text-center gap-4 mb-8">
-          <h2 className="text-s text-light-grey">
+          <h2 className="text-sm text-light-grey">
             {content.description}
           </h2>
         </div>

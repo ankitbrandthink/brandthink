@@ -46,7 +46,7 @@ export default function AboutPage() {
             <span className="block text-bt-red">{aboutContent.heading.highlight}</span>
           </h1>
 
-          <p className="max-w-2xl text-lg text-light-grey">
+          <p className="max-w-2xl text-base text-light-grey sm:text-lg">
             {aboutContent.description}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
             <span className="text-bt-red">{content.heading.highlight}</span>
           </h2>
 
-          <p className="max-w-2xl text-lg text-light-grey">
+          <p className="max-w-2xl text-base text-light-grey sm:text-lg">
             {content.intro}
           </p>
         </div>

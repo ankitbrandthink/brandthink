@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <h2
               data-text={logo}
-              className="glitch-hover bebas mb-4 text-3xl uppercase text-bt-red"
+              className="glitch-hover bebas mb-4 text-2xl uppercase text-bt-red sm:text-3xl"
             >
               {logo}
             </h2>

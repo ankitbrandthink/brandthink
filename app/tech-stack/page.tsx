@@ -53,7 +53,7 @@ export default function TechStack() {
             </span>
           </h1>
 
-          <p className="mb-16 max-w-2xl text-lg text-light-grey">
+          <p className="mb-16 max-w-2xl text-base text-light-grey sm:text-lg">
             {content.description}
           </p>
 
@@ -76,7 +76,7 @@ export default function TechStack() {
                       className="mb-4 text-bt-red"
                     />
 
-                    <h3 className="mb-3 text-2xl bebas text-white">
+                    <h3 className="mb-3 text-xl bebas text-white sm:text-2xl">
                       {category.title}
                     </h3>
 
