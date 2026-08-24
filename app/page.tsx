@@ -6,7 +6,6 @@ import Methodology from "@/components/sections/Methodology";
 import CaseStudies from "@/components/sections/CaseStudies";
 import CTA from "@/components/sections/CTA";
 import Clients from "@/src/components/sections/Clients";
-import AboutTimeline from "@/src/components/sections/About";
 
 export default function Home() {
   return (
@@ -23,7 +22,7 @@ export default function Home() {
       <CaseStudies />
       <Technology />
       <Methodology />
-      <AboutTimeline />
+      {/* <AboutTimeline /> */}
       <CTA />
     </main>
   );
