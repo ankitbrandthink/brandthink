@@ -151,7 +151,7 @@ export default function Clients() {
           </h2>
         </div>
 
-        <div className="mx-auto mb-16 grid max-w-2xl grid-cols-3 gap-6 border-y border-grey-1 py-8 text-center">
+        {/* <div className="mx-auto mb-16 grid max-w-2xl grid-cols-3 gap-6 border-y border-grey-1 py-8 text-center">
           {content.stats.map((stat) => (
             <div key={stat.label}>
               <div className="bebas text-4xl text-white sm:text-5xl">
@@ -162,7 +162,7 @@ export default function Clients() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="flex flex-col gap-4 md:gap-5">
