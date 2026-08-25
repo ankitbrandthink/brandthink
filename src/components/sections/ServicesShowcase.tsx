@@ -27,7 +27,6 @@ const ICONS: Record<string, LucideIcon> = {
 export default function ServicesShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const flipperRef = useRef<HTMLDivElement>(null);
   const faceARef = useRef<HTMLImageElement>(null);
@@ -59,42 +58,11 @@ export default function ServicesShowcase() {
     faceA.src = content.items[0].image;
     faceB.src = content.items[1]?.image ?? content.items[0].image;
 
+    // Mobile skips the flip-card entirely (each row shows its own plain
+    // image header instead), so the scroll-driven flip only ever runs on
+    // desktop.
     const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !isDesktop) {
-      // Mobile: the image column is a sticky split-screen panel above the
-      // scrollable text list rather than a page-scroll-driven flip, so swap
-      // the static face to match whichever row is most visible in that list
-      // instead of running the GSAP flip.
-      const root = scrollContainerRef.current;
-      if (!isDesktop && root) {
-        const ratios = new Map<Element, number>();
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => ratios.set(entry.target, entry.intersectionRatio));
-
-            let bestRow: Element | null = null;
-            let bestRatio = 0;
-            ratios.forEach((ratio, el) => {
-              if (ratio > bestRatio) {
-                bestRatio = ratio;
-                bestRow = el;
-              }
-            });
-
-            if (!bestRow) return;
-            const index = rowRefs.current.indexOf(bestRow as HTMLDivElement);
-            if (index === -1) return;
-            faceA.src = content.items[index].image;
-          },
-          { root, threshold: [0, 0.25, 0.5, 0.75, 1] }
-        );
-
-        rowRefs.current.forEach((row) => row && observer.observe(row));
-        return () => observer.disconnect();
-      }
-
       return;
     }
 
@@ -130,10 +98,10 @@ export default function ServicesShowcase() {
       ref={sectionRef}
       className="mx-auto mt-16 grid w-full gap-12 px-6 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20"
     >
-      <div className="sticky top-20 z-10 h-[40vh] lg:top-35 lg:z-auto lg:h-fit">
+      <div className="hidden lg:sticky lg:top-35 lg:block lg:h-fit">
         <div
           ref={imageWrapperRef}
-          className="relative h-full w-full lg:aspect-[4/3] lg:h-auto"
+          className="relative aspect-[4/3] w-full"
           style={{ perspective: "1600px" }}
         >
           <div
@@ -159,10 +127,7 @@ export default function ServicesShowcase() {
         </div>
       </div>
 
-      <div
-        ref={scrollContainerRef}
-        className="max-h-[calc(100vh-5rem-40vh-3rem)] overflow-y-auto overscroll-contain lg:max-h-none lg:overflow-visible"
-      >
+      <div>
         {content.items.map((item, index) => {
           const Icon = ICONS[item.icon] ?? Palette;
 
@@ -174,6 +139,17 @@ export default function ServicesShowcase() {
               }}
               className="border-t border-grey-1 py-16 first:border-t-0 first:pt-0 lg:flex lg:min-h-[var(--card-h)] lg:flex-col lg:justify-center"
             >
+              {/* Mobile: each row gets its own plain image header instead
+                  of sharing the desktop flip-card. */}
+              <div className="mb-6 aspect-[4/3] w-full overflow-hidden lg:hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.image}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
               <Reveal>
                 <div className="mb-4 flex items-center gap-4">
                   <Icon
