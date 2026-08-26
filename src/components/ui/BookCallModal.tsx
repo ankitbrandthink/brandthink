@@ -146,8 +146,8 @@ export function BookCallModalProvider({ children }: { children: ReactNode }) {
                   </h2>
 
                   <p className="mb-8 text-sm text-light-grey">
-                    30 minutes, no pitch. Tell us a bit about your brand and
-                    when's best to reach you.
+                    Good ideas deserve the right team behind them. Tell us
+                    what's on your mind, and let's start a conversation.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
