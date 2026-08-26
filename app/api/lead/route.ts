@@ -37,35 +37,41 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const [token] = await Promise.all([getAccessToken()]);
+    // Zoho CRM push is best-effort. A credential or API failure must never
+    // cost us the lead, so it is logged and the email notification still goes out.
+    try {
+      const token = await getAccessToken();
 
-    const zohoRes = await fetch('https://www.zohoapis.in/crm/v6/Leads', {
-      method: 'POST',
-      headers: {
-        Authorization: `Zoho-oauthtoken ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        data: [{
-          Last_Name: name,
-          Email: email,
-          Phone: phone,
-          Mobile: phone,
-          Company: company,
-          Description: location ? `Source Page: ${location}\n\n${message ?? ''}` : (message ?? ''),
-          Project_Details: message ?? '',
-          LEADCF1: budget,
-          Monthly_Budget: budget,
-          Lead_Source: location ? `Performance Marketing - ${location}` : 'Performance Marketing Landing Page',
-        }],
-      }),
-    });
+      const zohoRes = await fetch('https://www.zohoapis.in/crm/v6/Leads', {
+        method: 'POST',
+        headers: {
+          Authorization: `Zoho-oauthtoken ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          data: [{
+            Last_Name: name,
+            Email: email,
+            Phone: phone,
+            Mobile: phone,
+            Company: company,
+            Description: location ? `Source Page: ${location}\n\n${message ?? ''}` : (message ?? ''),
+            Project_Details: message ?? '',
+            LEADCF1: budget,
+            Monthly_Budget: budget,
+            Lead_Source: location ? `Performance Marketing - ${location}` : 'Performance Marketing Landing Page',
+          }],
+        }),
+      });
 
-    const zohoBody = await zohoRes.json().catch(() => null);
-    if (!zohoRes.ok || zohoBody?.data?.[0]?.status === 'error') {
-      console.error('Zoho CRM error:', JSON.stringify(zohoBody));
-    } else {
-      console.log('Zoho CRM response:', JSON.stringify(zohoBody));
+      const zohoBody = await zohoRes.json().catch(() => null);
+      if (!zohoRes.ok || zohoBody?.data?.[0]?.status === 'error') {
+        console.error('Zoho CRM error:', JSON.stringify(zohoBody));
+      } else {
+        console.log('Zoho CRM response:', JSON.stringify(zohoBody));
+      }
+    } catch (err) {
+      console.error('Zoho CRM push skipped, lead still emailed:', err);
     }
 
     const pageLabel = location ? `Performance Marketing — ${location}` : 'Performance Marketing Landing Page';
