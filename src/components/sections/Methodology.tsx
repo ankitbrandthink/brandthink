@@ -82,7 +82,7 @@ export default function Methodology() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="methodology" className="bg-dark-grey py-32">
+    <section ref={sectionRef} id="methodology" className="bg-dark-grey py-16">
       <div className="mx-auto px-6 md:px-12 lg:px-20">
         <p
           data-text={content.eyebrow}

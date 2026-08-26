@@ -10,7 +10,7 @@ export default function Technology() {
   return (
     <section
       id="technology"
-      className="bg-dark-grey py-32"
+      className="bg-dark-grey py-16"
     >
       <div className="mx-auto px-6 md:px-12 lg:px-20">
         <p

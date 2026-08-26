@@ -19,7 +19,7 @@ export default function CTA() {
   const { open: openBookCallModal } = useBookCallModal();
 
   return (
-    <section id="cta" className="bg-dark-grey py-32">
+    <section id="cta" className="bg-dark-grey py-16">
       <div className="mx-auto px-6 md:px-12 lg:px-20">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p
