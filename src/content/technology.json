@@ -9,25 +9,37 @@
   "orm": {
     "eyebrow": "Proprietary Platform",
     "heading": {
-      "line1": "AI-Powered",
-      "highlight": "Reputation Management Platform"
+      "line1": "AI That Understands.",
+      "highlight": "Tech That Responds."
     },
-    "brief": "BrandThink's ORM CMS Platform helps businesses monitor, analyze, and manage their online reputation through a unified AI-powered system. The platform combines social listening, sentiment analysis, automated reporting, real-time alerts, and intelligent workflows to help brands respond faster and make data-driven reputation decisions.",
+    "brief": "This ORM CMS Platform brings together AI, automation, and reputation intelligence to help teams move from simply tracking conversations to understanding, managing, and responding with confidence.",
     "features": [
       "Multi-channel reputation monitoring",
-      "AI-powered sentiment analysis",
-      "Automated reporting & analytics",
-      "Real-time reputation alerts",
-      "AI-assisted response workflows",
-      "Scalable multi-brand management"
+      "AI-powered sentiment & narrative analysis",
+      "Workflow & ticket management",
+      "Automated reporting & executive dashboards",
+      "Real-time alerts & crisis detection",
+      "Secure multi-tenant platform architecture"
     ]
   },
   "dashboard": {
     "title": "BRANDTHINK GROWTH DASHBOARD — LIVE",
     "metrics": [
-      { "label": "TOTAL ROAS", "value": "4.2×", "delta": "↑ 18% vs last month" },
-      { "label": "PIPELINE VALUE", "value": "₹2.4Cr", "delta": "↑ 34% vs last month" },
-      { "label": "CAC REDUCTION", "value": "−42%", "delta": "↑ Target exceeded" }
+      {
+        "label": "TOTAL ROAS",
+        "value": "4.2×",
+        "delta": "↑ 18% vs last month"
+      },
+      {
+        "label": "PIPELINE VALUE",
+        "value": "₹2.4Cr",
+        "delta": "↑ 34% vs last month"
+      },
+      {
+        "label": "CAC REDUCTION",
+        "value": "−42%",
+        "delta": "↑ Target exceeded"
+      }
     ]
   }
 }

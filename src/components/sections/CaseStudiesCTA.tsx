@@ -4,7 +4,7 @@ import { useBookCallModal } from "@/components/ui/BookCallModal";
 import HoverFlipText from "@/components/ui/HoverFlipText";
 import content from "@/content/caseStudiesCTA.json";
 
-export default function CaseStudiesCTA() {
+export default function CaseStudiesCTA({ label }: { label?: string } = {}) {
   const { open: openBookCallModal } = useBookCallModal();
 
   return (
@@ -13,7 +13,7 @@ export default function CaseStudiesCTA() {
       onClick={openBookCallModal}
       className="btn-brand bg-bt-red text-white"
     >
-      <HoverFlipText text={content.buttonLabel} />
+      <HoverFlipText text={label ?? content.buttonLabel} />
     </button>
   );
 }

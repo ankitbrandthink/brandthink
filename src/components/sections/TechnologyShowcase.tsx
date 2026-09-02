@@ -185,14 +185,8 @@ export default function TechnologyShowcase() {
                     </span>
                   </div>
 
-                  <div className="bebas mb-1 text-3xl text-white sm:text-4xl">
-                    {pillar.metric.value}
-                  </div>
-                  <div
-                    className="mb-4 text-xs uppercase tracking-[0.15em]"
-                    style={{ color: pillar.accent }}
-                  >
-                    {pillar.metric.label}
+                  <div className="bebas mb-4 text-3xl uppercase leading-none text-white sm:text-4xl">
+                    {pillar.title}
                   </div>
 
                   <div className="mb-4 h-1.5 w-full overflow-hidden rounded-full bg-dark-grey">

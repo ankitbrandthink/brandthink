@@ -63,7 +63,7 @@ export default function TechnologyPage() {
             {content.cta.paragraph}
           </p>
 
-          <CaseStudiesCTA />
+          <CaseStudiesCTA label="Schedule a Demo" />
         </div>
       </section>
     </>
