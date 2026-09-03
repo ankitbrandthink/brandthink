@@ -49,7 +49,7 @@ export default function CaseStudyVisual({
   if (image) {
     return (
       <div
-        className={`relative shrink-0 overflow-hidden border-b border-grey-1 bg-dark-grey ${compact ? "aspect-[2.4/1]" : ""}`}
+        className={`relative shrink-0 overflow-hidden border-b border-grey-1 bg-dark-grey ${compact ? "aspect-[2/1]" : ""}`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
